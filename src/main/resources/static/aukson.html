@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyingi Sahifa</title>
+    <style>
+        img {
+            width: 200px; /* Mashina rasmini kichikroq qilish */
+            height: auto;
+        }
+        .car-info {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .price-input {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Salom!</h1>
+<img src="photo_2023-10-30_21-56-26.jpg" alt="Mashina">
+
+<div class="price-input">
+    <label for="carPrice">Mashina narxi:</label>
+    <input type="text" id="carPrice" name="carPrice" placeholder="Mashina narxini kiriting">
+    <button onclick="showCarInfo()">Narxni kiritish</button>
+</div>
+<div class="car-info">
+    <p><strong>MAshina:</strong> Malibu xl </p>
+    <p><strong>Mashina narxi:</strong> $20,000</p>
+    <p><strong>Yurgani:</strong> 5,000 km </p>
+    <p><strong>Turi:</strong> avtomatik</p>
+    <p><strong>Holati:</strong> yaxshi </p>
+    <p><strong>Rangi :</strong> qizil </p>
+
+</div>
+
+<script>
+    function checkPrice() {
+        var carPrice = document.getElementById("carPrice").value;
+        var carInfo = document.getElementById("carInfo");
+        var highestPrice = document.getElementById("highestPrice");
+
+        if (carPrice) {
+            highestPrice.textContent = "$" + carPrice;
+            carInfo.style.display = "block";
+        } else {
+            setTimeout(function(){
+                var carPriceAfterDelay = document.getElementById("carPrice").value;
+                if (!carPriceAfterDelay) {
+                    alert("3 daqiqa ichida malumot kiritilmaganligi sababli, sizning xizmatingizga mashina kiritilmasa, mashina sizning emas.");
+                }
+            }, 180000);
+        }
+    }
+</script>
+</body>
+</html>
+
+</script>
+
+</body>
+</html>

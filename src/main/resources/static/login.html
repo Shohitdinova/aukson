@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saytingizning Sarlavhasi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #nextButton {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Xush kelibsiz! Auksonda qatnashishni hohlasangiz shu tugmani bosing</h1>
+    <button onclick="showForm()">Auksonga qatnashish</button>
+</header>
+<nav>
+    <ul>
+        <li><a href="#">Bosh Sahifa</a></li>
+    </ul>
+</nav>
+<main id="main-section" style="display: none;">
+    <h2>Ism va Telefon Raqamingizni Kiriting</h2>
+    <form id="info-form">
+        <label for="name">Ism:</label>
+        <br>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="phoneNumber">Telefon Raqami:</label>
+        <br>
+        <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{9,15}">
+        <br> <br>
+        <button type="button" id="nextButton" onclick="nextPage()">Next</button>
+    </form>
+</main>
+<footer>
+    <p>&copy; 2024. Shohitdinova moxina +998 93 199-73-09</p>
+</footer>
+
+<script>
+    function showForm() {
+        document.getElementById("main-section").style.display = "block";
+    }
+
+    function nextPage() {
+        var name = document.getElementById("name").value;
+        var phoneNumber = document.getElementById("phoneNumber").value;
+        // Bu qatordan keyin, ma'lumotlarni kerakli joyga yuborishingiz kerak.
+        console.log("Ism: " + name + ", Telefon Raqami: " + phoneNumber);
+        // Keyingi sahifaga o'tish logikasini qo'shing
+        window.location.href = 'aukson.html'; // Keyingi sahifa URL'ingizni yozing
+    }
+</script>
+
+</body>
+</html>
