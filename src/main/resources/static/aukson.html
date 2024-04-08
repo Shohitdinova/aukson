@@ -5,21 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keyingi Sahifa</title>
     <style>
+        /* CSS stilini joylashtiring */
+        body {
+            color: #333;
+
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
         img {
-            width: 200px; /* Mashina rasmini kichikroq qilish */
+            width: 300px;
             height: auto;
         }
+
+        .price-input {
+            margin-bottom: 20px;
+        }
+
         .car-info {
+
             font-size: 18px;
             margin-top: 20px;
-        }
-        .price-input {
+            padding: 0px;
             margin-top: 20px;
+            border: 10px peru ;
+            border-radius: 5px; /* Kengaytirilgan yaxlitlash */
+            text-align: center;
+        }
+
+        .car-info p {
+            margin: 5px 0;
+
+        }
+
+        .car-info ssxsxce{
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px; /* Kengaytirilgan yaxlitlash */
+            width: fit-content; /* Elementni matnning kengligiga moslab joylashtirish */
+            text-align: left;
+        }
+        .error-message {
+            color: red;
+            font-size: 18px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
+
+
+
+    <!--        .price-input {-->
+    <!--            margin-top: 20px;-->
+    <!--        }-->
+    <!--    </style>-->
 </head>
+
 <body>
-<h1>Salom!</h1>
+<!--<h1>Salom!</h1>-->
 <img src="photo_2023-10-30_21-56-26.jpg" alt="Mashina">
 
 <div class="price-input">
@@ -28,7 +90,7 @@
     <button onclick="showCarInfo()">Narxni kiritish</button>
 </div>
 <div class="car-info">
-    <p><strong>MAshina:</strong> Malibu xl </p>
+    <p><strong>Mashina:</strong> Malibu xl </p>
     <p><strong>Mashina narxi:</strong> $20,000</p>
     <p><strong>Yurgani:</strong> 5,000 km </p>
     <p><strong>Turi:</strong> avtomatik</p>
@@ -36,21 +98,25 @@
     <p><strong>Rangi :</strong> qizil </p>
 
 </div>
+<div id="carPriceAccepted"></div>
 
 <script>
     function checkPrice() {
         var carPrice = document.getElementById("carPrice").value;
         var carInfo = document.getElementById("carInfo");
         var highestPrice = document.getElementById("highestPrice");
+        var errorMessage = document.getElementById("errorMessage");
 
         if (carPrice) {
             highestPrice.textContent = "$" + carPrice;
             carInfo.style.display = "block";
+            errorMessage.style.display = "none"; // Xatolik xabarini yashirish
+            console.log("Kiritilgan mashina narxi: $" + carPrice); // Konsolga chiqarish
         } else {
-            setTimeout(function(){
+            setTimeout(function () {
                 var carPriceAfterDelay = document.getElementById("carPrice").value;
                 if (!carPriceAfterDelay) {
-                    alert("3 daqiqa ichida malumot kiritilmaganligi sababli, sizning xizmatingizga mashina kiritilmasa, mashina sizning emas.");
+                    errorMessage.style.display = "block"; // Xatolik xabarini ko'rsatish
                 }
             }, 180000);
         }
