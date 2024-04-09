@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saytingizning Sarlavhasi</title>
+    <title>Game</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #333;
+            background-color: #9d0f14;
             color: #fff;
-            padding: 20px;
+            padding: 20px  8px;
             text-align: center;
         }
 
@@ -28,14 +28,14 @@
         }
 
         nav ul li {
-            display: inline;
+            display: flex;
             margin-right: 10px;
         }
 
         nav ul li a {
             text-decoration: none;
             color: #fff;
-            padding: 10px;
+            padding: 100px  ;
         }
 
         main {
@@ -44,7 +44,7 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #9d0f14;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -54,10 +54,10 @@
         }
 
         #nextButton {
-            background-color: #4CAF50;
+            background-color: #011593;
             border: none;
             color: white;
-            padding: 15px 32px;
+            padding: 5px 70px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -65,9 +65,29 @@
             margin-top: 10px;
             cursor: pointer;
         }
+        button:hover {
+            background-color: rgba(136, 26, 29, 0.99); /* Orqa fon rangini o'zgartirish */
+        }
+
+
+        /*h1 {*/
+        /*    font-family: Arial, sans-serif; !* İstenilen font *!*/
+        /*    color: #333; !* İstenilen renk *!*/
+        /*}*/
+
+        button {
+            background-color: rgba(255, 51, 56, 0.99); /* Orqa fon rangini o'zgartirish */
+            color: #fff; /* İstenilen metin rengi */
+            border: none;
+            padding: 10px 50px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
     </style>
 </head>
+
 <body>
 <header>
         <h1>Xush kelibsiz! </h1>
@@ -98,7 +118,7 @@
     </form>
 </main>
 <footer>
-    <p>&copy; 2024. Shohitdinova Moxina +998 93 199-73-09</p>
+    <p>&Mcy; 2024. Shohitdinova Moxina +998 93 199-73-09</p>
 </footer>
 
 <script>
@@ -109,10 +129,8 @@
     function nextPage() {
         var name = document.getElementById("name").value;
         var phoneNumber = document.getElementById("phoneNumber").value;
-        // Bu qatordan keyin, ma'lumotlarni kerakli joyga yuborishingiz kerak.
         console.log("Ism: " + name + ", Telefon Raqami: " + phoneNumber);
-        // Keyingi sahifaga o'tish logikasini qo'shing
-        window.location.href = 'aukson.html'; // Keyingi sahifa URL'ingizni yozing
+        window.location.href = 'aukson.html';
     }
 </script>
 

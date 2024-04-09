@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keyingi Sahifa</title>
     <style>
-        /* CSS stilini joylashtiring */
         body {
-            color: #333;
+            color: #332;
 
             font-family: Arial, sans-serif;
             text-align: center;
@@ -20,43 +19,49 @@
         img {
             width: 300px;
             height: auto;
+            padding: 0px   600px;
+
         }
 
         .price-input {
             margin-bottom: 20px;
         }
 
-        .car-info {
+        /*.car-info {*/
 
-            font-size: 18px;
-            margin-top: 20px;
-            padding: 0px;
-            margin-top: 20px;
-            border: 10px peru ;
-            border-radius: 5px; /* Kengaytirilgan yaxlitlash */
-            text-align: center;
-        }
+        /*    font-size: 18px;*/
+        /*    margin-top: 20px;*/
+        /*    padding: 0px;*/
+        /*    margin-top: 20px;*/
+        /*    border: 10px peru ;*/
+        /*    border-radius: 5px; !* Kengaytirilgan yaxlitlash *!*/
+        /*    text-align: justify-all;*/
+        /*}*/
 
-        .car-info p {
-            margin: 5px 0;
+        /*.car-info p {*/
+        /*    margin: 5px 0;*/
 
-        }
+        /*}*/
 
-        .car-info ssxsxce{
-            display: none;
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px; /* Kengaytirilgan yaxlitlash */
-            width: fit-content; /* Elementni matnning kengligiga moslab joylashtirish */
-            text-align: left;
-        }
-        .error-message {
-            color: red;
-            font-size: 18px;
-            margin-top: 20px;
-            display: none;
-        }
+        /*.car-info ssxsxce{*/
+        /*    display: none;*/
+        /*    margin-top: 20px;*/
+        /*    padding: 15px;*/
+        /*    border: 1px solid #ccc;*/
+        /*    border-radius: 5px; !* Kengaytirilgan yaxlitlash *!*/
+        /*    width: fit-content; !* Elementni matnning kengligiga moslab joylashtirish *!*/
+        /*    text-align: left;*/
+        /*    border-collapse: collapse;*/
+        /*    margin-bottom: 1rem;*/
+        /*    color: #212529;*/
+        /*}*/
+        /*.error-message {*/
+        /*    color: red;*/
+        /*    font-size: 18px;*/
+        /*    margin-top: 20px;*/
+        /*    display: none;*/
+        /*}*/
+
 
         button {
             padding: 10px 20px;
@@ -70,18 +75,38 @@
         button:hover {
             background-color: #0056b3;
         }
+
+
+        .car-info {
+            border: 1px solid rgba(119, 6, 9, 0.99);
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .car-info p {
+            padding:    0px  500px;
+            border-bottom: 1px solid #1e0707;
+        }
+
+        .car-info p:last-child {
+
+            border-bottom: none;
+        }
+
+        .car-info strong {
+            font-weight: bold;
+        }
+
+        .car-info p:nth-child(even) {
+            /*background-color: #f2f2f2;*/
+        }
     </style>
 
 
 
-    <!--        .price-input {-->
-    <!--            margin-top: 20px;-->
-    <!--        }-->
-    <!--    </style>-->
 </head>
 
 <body>
-<!--<h1>Salom!</h1>-->
 <img src="photo_2023-10-30_21-56-26.jpg" alt="Mashina">
 
 <div class="price-input">
