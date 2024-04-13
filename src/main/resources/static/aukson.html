@@ -3,127 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>START GAME</title>
+    <title>Go Game</title>
     <style>
         body {
-            color: #332;
-
             font-family: Arial, sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
 
-        h1 {
-            color: #333;
-        }
-
-        img {
-            width: 300px;
-            height: auto;
-            padding: 0px   600px;
-
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         .price-input {
             margin-bottom: 20px;
         }
 
-        /*.car-info {*/
-
-        /*    font-size: 18px;*/
-        /*    margin-top: 20px;*/
-        /*    padding: 0px;*/
-        /*    margin-top: 20px;*/
-        /*    border: 10px peru ;*/
-        /*    border-radius: 5px; !* Kengaytirilgan yaxlitlash *!*/
-        /*    text-align: justify-all;*/
-        /*}*/
-
-        /*.car-info p {*/
-        /*    margin: 5px 0;*/
-
-        /*}*/
-
-        /*.car-info ssxsxce{*/
-        /*    display: none;*/
-        /*    margin-top: 20px;*/
-        /*    padding: 15px;*/
-        /*    border: 1px solid #ccc;*/
-        /*    border-radius: 5px; !* Kengaytirilgan yaxlitlash *!*/
-        /*    width: fit-content; !* Elementni matnning kengligiga moslab joylashtirish *!*/
-        /*    text-align: left;*/
-        /*    border-collapse: collapse;*/
-        /*    margin-bottom: 1rem;*/
-        /*    color: #212529;*/
-        /*}*/
-        /*.error-message {*/
-        /*    color: red;*/
-        /*    font-size: 18px;*/
-        /*    margin-top: 20px;*/
-        /*    display: none;*/
-        /*}*/
-
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-
-        .car-info {
-            border: 1px solid rgba(119, 6, 9, 0.99);
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        .car-info p {
-            padding:    0px  500px;
-            border-bottom: 1px solid #1e0707;
-        }
-
-        .car-info p:last-child {
-
-            border-bottom: none;
-        }
-
-        .car-info strong {
+        .price-input label {
             font-weight: bold;
         }
 
-        .car-info p:nth-child(even) {
-            /*background-color: #f2f2f2;*/
+        .price-input input[type="text"] {
+            width: calc(100% - 110px);
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .price-input button {
+            width: 100px;
+            padding: 8px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .car-table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 70%;
+        }
+
+        .car-table th, .car-table td {
+            border: 1px solid #252121;
+            padding: 10px;
+            width: 70%;
+
+            text-align: -moz-center;
+        }
+
+        .car-table th {
+            background-color: rgb(255, 255, 255);
+        }
+
+        #errorMessage {
+            display: none;
+            color: red;
+            margin-top: 5px;
+        }
+
+        .car-image {
+            width: 50%;
+            margin-top: 20px;
+            border: 2px solid transparent;
+        }
+
+        .car-info {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .car-info > * {
+            flex: 0 0 50%;
+        }
+
+        .car-info > img {
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            border-color: red;
         }
     </style>
-
-
-
 </head>
 
 <body>
-<img src="photo_2023-10-30_21-56-26.jpg" alt="Mashina">
-
-<div class="price-input">
-    <label for="carPrice">Mashina narxi:</label>
-    <input type="text" id="carPrice" name="carPrice" placeholder="Mashina narxini kiriting">
-    <button onclick="showCarInfo()">Narxni kiritish</button>
+<div class="container">
+    <div class="price-input">
+        <label for="carPrice">Mashina narxi:</label>
+        <input type="text" id="carPrice" name="carPrice" placeholder="Mashinaning so'ngggi narxini kiriting !">
+        <button onclick="checkPrice()">Narxni kiritish</button>
+    </div>
+    <div class="car-info" id="carInfo">
+        <img src="img.png" alt="Mashina" class="car-image">
+        <table class="car-table">
+            <tr>
+                <td><strong>Mashina:</strong></td>
+                <td id="carName">Malibu xl</td>
+            </tr>
+            <tr>
+                <td><strong>Mashina narxi:</strong></td>
+                <td id="carPriceValue">$24,000</td>
+            </tr>
+            <tr>
+                <td><strong>Yurgani:</strong></td>
+                <td>5,000 km</td>
+            </tr>
+            <tr>
+                <td><strong>Turi:</strong></td>
+                <td>avtomat</td>
+            </tr>
+            <tr>
+                <td><strong>Holati:</strong></td>
+                <td>yaxshi</td>
+            </tr>
+            <tr>
+                <td><strong>Rangi :</strong></td>
+                <td>qizil</td>
+            </tr>
+        </table>
+    </div>
+    <div id="highestPrice"></div>
+    <div id="errorMessage">Iltimos, mashina narxini kiriting!</div>
 </div>
-<div class="car-info">
-    <p><strong>Mashina:</strong> Malibu xl </p>
-    <p><strong>Mashina narxi:</strong> $20,000</p>
-    <p><strong>Yurgani:</strong> 5,000 km </p>
-    <p><strong>Turi:</strong> avtomatik</p>
-    <p><strong>Holati:</strong> yaxshi </p>
-    <p><strong>Rangi :</strong> qizil </p>
-
-</div>
-<div id="carPriceAccepted"></div>
 
 <script>
     function checkPrice() {
@@ -132,23 +144,32 @@
         var highestPrice = document.getElementById("highestPrice");
         var errorMessage = document.getElementById("errorMessage");
 
+        var carPriceValue = document.getElementById("carPriceValue");
+
         if (carPrice) {
             highestPrice.textContent = "$" + carPrice;
+            carPriceValue.textContent = "$" + carPrice;
             carInfo.style.display = "block";
-            errorMessage.style.display = "none"; // Xatolik xabarini yashirish
-            console.log("Kiritilgan mashina narxi: $" + carPrice); // Konsolga chiqarish
+            errorMessage.style.display = "none";
+            console.log("Kiritilgan mashina narxi: $" + carPrice);
+
+            // Songgi narx qismi
+            document.getElementById("latestPrice").textContent = "$" + carPrice;
         } else {
+            errorMessage.style.display = "block";
             setTimeout(function () {
-                var carPriceAfterDelay = document.getElementById("carPrice").value;
-                if (!carPriceAfterDelay) {
-                    errorMessage.style.display = "block"; // Xatolik xabarini ko'rsatish
-                }
-            }, 180000);
+                errorMessage.style.display = "none";
+            }, 5000); // Xatolik xabari uchun o'zgartirildi: 5000 millisaniya (5 sekund)
         }
+
+        var carName = document.querySelector("#carName strong"); // "Mashina" nomi uchun
+        carName.classList.add("highlight");
+        setTimeout(function () {
+            carName.classList.remove("highlight");
+        }, 1000); // Qizil rangni o'chirish uchun o'zgartirildi: 1000 millisaniya (1 sekund)
     }
 </script>
+
+
 </body>
 </html>
-
-</script>
-
