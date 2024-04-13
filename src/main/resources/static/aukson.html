@@ -111,7 +111,7 @@
             </tr>
             <tr>
                 <td><strong>Mashina narxi:</strong></td>
-                <td id="carPriceValue">$24,000</td>
+                <td >$24,000</td>
             </tr>
             <tr>
                 <td><strong>Yurgani:</strong></td>
@@ -129,30 +129,46 @@
                 <td><strong>Rangi:</strong></td>
                 <td>qizil</td>
             </tr>
+
+
+            <tr>
+
+            <tr>
+                <td><strong>Songgi narx:</strong></td>
+                <td id="highestPrice"></td>
+            </tr>
+            </tr>
         </table>
     </div>
-    <div id="highestPrice"></div>
     <div id="errorMessage">Iltimos, mashina narxini kiriting!</div>
 </div>
 
 <script>
+    var previousPrice = 24000; // Misolcha
+
     function checkPrice() {
         var carPrice = document.getElementById("carPrice").value;
         var carInfo = document.getElementById("carInfo");
         var highestPrice = document.getElementById("highestPrice");
         var errorMessage = document.getElementById("errorMessage");
-
         var carPriceValue = document.getElementById("carPriceValue");
 
         if (carPrice) {
-            highestPrice.textContent = "$" + carPrice;
+            // Yangi narxni tekshirish
+            if (parseInt(carPrice) < previousPrice) {
+                // Yangi narx avvalgi narxdan kichikroq bo'lsa, eski narxni qaytarish
+                highestPrice.textContent = "$" + previousPrice;
+            } else {
+                // Yangi narx avvalgi narxdan katta yoki teng bo'lsa, yangi narxni qabul qilish
+                previousPrice = parseInt(carPrice); // Avvalgi narxni yangi narxga o'zgartirish
+                highestPrice.textContent = "$" + carPrice;
+            }
+
+            // Qolgan kodlar
             carPriceValue.textContent = "$" + carPrice;
             carInfo.style.display = "block";
             errorMessage.style.display = "none";
             console.log("Kiritilgan mashina narxi: $" + carPrice);
-
-            // Songgi narx qismi
-            document.getElementById("latestPrice").textContent = "$" + carPrice;
         } else {
             errorMessage.style.display = "block";
             setTimeout(function () {
