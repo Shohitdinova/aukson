@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
+
+
     <style>
+
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
@@ -13,9 +16,9 @@
         }
 
         header {
-            background-color: #9d0f14;
+            background-color: #0f3c9d;
             color: #fff;
-            padding: 20px  8px;
+            padding: 20px 8px;
             text-align: center;
         }
 
@@ -35,7 +38,7 @@
         nav ul li a {
             text-decoration: none;
             color: #fff;
-            padding: 100px  ;
+            padding: 100px;
         }
 
         main {
@@ -44,7 +47,7 @@
         }
 
         footer {
-            background-color: #9d0f14;
+            background-color: #0f279d;
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -65,18 +68,13 @@
             margin-top: 10px;
             cursor: pointer;
         }
+
         button:hover {
-            background-color: rgba(136, 26, 29, 0.99); /* Orqa fon rangini o'zgartirish */
+            background-color: rgba(30, 26, 136, 0.99); /* Orqa fon rangini o'zgartirish */
         }
 
-
-        /*h1 {*/
-        /*    font-family: Arial, sans-serif; !* İstenilen font *!*/
-        /*    color: #333; !* İstenilen renk *!*/
-        /*}*/
-
         button {
-            background-color: rgba(255, 51, 56, 0.99); /* Orqa fon rangini o'zgartirish */
+            background-color: rgba(51, 116, 255, 0.99); /* Orqa fon rangini o'zgartirish */
             color: #fff; /* İstenilen metin rengi */
             border: none;
             padding: 10px 50px;
@@ -84,26 +82,19 @@
             cursor: pointer;
             border-radius: 5px;
         }
-
     </style>
-</head>
-
-<body>
-<header>
-        <h1>Xush kelibsiz! </h1>
-       <h1> Auksonda qatnashishni hohlasangiz shu tugmani bosing</h1>
-    <button onclick="showForm()">Auksonga qatnashish</button>
+  </head>
 
 
-</header>
-<!--<nav>-->
-<!--    -->
-<!--    <ul>-->
+ <body>
+   <header>
+      <h1>Xush kelibsiz! </h1>
+      <h1> Auksonda qatnashishni hohlasangiz shu tugmani bosing</h1>
+      <button onclick="showForm()">Auksonga qatnashish</button>
+   </header>
 
-<!--        <li><a href="#">@shoh1tdinova</a></li>-->
-<!--    </ul>-->
-<!--</nav>-->
-<main id="main-section" style="display: none;">
+
+  <main id="main-section" style="display: none;">
     <h2>Ism va Telefon Raqamingizni Kiriting</h2>
     <form id="info-form">
         <label for="name">Ism:</label>
@@ -116,12 +107,15 @@
         <br> <br>
         <button type="button" id="nextButton" onclick="nextPage()">Next</button>
     </form>
-</main>
-<footer>
-    <p>&Mcy; 2024. Shohitdinova Moxina +998 93 199-73-09</p>
-</footer>
+  </main>
 
-<script>
+
+  <footer>
+    <p>&Mcy; 2024. Shohitdinova Moxina +998 93 199-73-09</p>
+  </footer>
+
+
+  <script>
     function showForm() {
         document.getElementById("main-section").style.display = "block";
     }
@@ -132,7 +126,7 @@
         console.log("Ism: " + name + ", Telefon Raqami: " + phoneNumber);
         window.location.href = 'aukson.html';
     }
-</script>
+  </script>
 
-</body>
+ </body>
 </html>
