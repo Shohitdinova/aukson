@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
@@ -83,18 +83,18 @@
             border-radius: 5px;
         }
     </style>
-  </head>
+</head>
 
 
- <body>
-   <header>
-      <h1>Xush kelibsiz! </h1>
-      <h1> Auksonda qatnashishni hohlasangiz shu tugmani bosing</h1>
-      <button onclick="showForm()">Auksonga qatnashish</button>
-   </header>
+<body>
+<header>
+    <h1>Xush kelibsiz! </h1>
+    <h1> Auksonda qatnashishni hohlasangiz shu tugmani bosing</h1>
+    <button onclick="showForm()">Auksonga qatnashish</button>
+</header>
 
 
-  <main id="main-section" style="display: none;">
+<main id="main-section" style="display: none;">
     <h2>Ism va Telefon Raqamingizni Kiriting</h2>
     <form id="info-form">
         <label for="name">Ism:</label>
@@ -107,26 +107,35 @@
         <br> <br>
         <button type="button" id="nextButton" onclick="nextPage()">Next</button>
     </form>
-  </main>
+</main>
 
 
-  <footer>
+<footer>
     <p>&Mcy; 2024. Shohitdinova Moxina +998 93 199-73-09</p>
-  </footer>
+</footer>
 
 
-  <script>
+<script>
     function showForm() {
         document.getElementById("main-section").style.display = "block";
     }
 
     function nextPage() {
+
         var name = document.getElementById("name").value;
         var phoneNumber = document.getElementById("phoneNumber").value;
-        console.log("Ism: " + name + ", Telefon Raqami: " + phoneNumber);
-        window.location.href = 'aukson.html';
-    }
-  </script>
 
- </body>
+        if (name == null || phoneNumber == null) {
+            alert("Ma'lumotlar to'liq emas!");
+        } else {
+            console.log("Ism: " + name + ", Telefon Raqami: " + phoneNumber);
+            window.location.href = 'aukson.html';
+        }
+
+
+    }
+</script>
+
+
+</body>
 </html>
