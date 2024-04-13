@@ -154,17 +154,13 @@
         var carPriceValue = document.getElementById("carPriceValue");
 
         if (carPrice) {
-            // Yangi narxni tekshirish
             if (parseInt(carPrice) < previousPrice) {
-                // Yangi narx avvalgi narxdan kichikroq bo'lsa, eski narxni qaytarish
                 highestPrice.textContent = "$" + previousPrice;
             } else {
-                // Yangi narx avvalgi narxdan katta yoki teng bo'lsa, yangi narxni qabul qilish
-                previousPrice = parseInt(carPrice); // Avvalgi narxni yangi narxga o'zgartirish
+                previousPrice = parseInt(carPrice);
                 highestPrice.textContent = "$" + carPrice;
             }
 
-            // Qolgan kodlar
             carPriceValue.textContent = "$" + carPrice;
             carInfo.style.display = "block";
             errorMessage.style.display = "none";
@@ -173,14 +169,14 @@
             errorMessage.style.display = "block";
             setTimeout(function () {
                 errorMessage.style.display = "none";
-            }, 5000); // Xatolik xabari uchun o'zgartirildi: 5000 millisaniya (5 sekund)
-        }
+            }, 5000); }
 
-        var carName = document.querySelector("#carName strong"); // "Mashina" nomi uchun
+
+        var carName = document.querySelector("#carName strong");
         carName.classList.add("highlight");
         setTimeout(function () {
             carName.classList.remove("highlight");
-        }, 1000); // Qizil rangni o'chirish uchun o'zgartirildi: 1000 millisaniya (1 sekund)
+        }, 1000);
     }
 </script>
 
