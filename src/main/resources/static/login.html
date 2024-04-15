@@ -125,15 +125,27 @@
         var name = document.getElementById("name").value;
         var phoneNumber = document.getElementById("phoneNumber").value;
 
-        if (name == null || phoneNumber == null) {
+        if (!name || !phoneNumber) {
             alert("Ma'lumotlar to'liq emas!");
         } else {
             console.log("Ism: " + name + ", Telefon Raqami: " + phoneNumber);
             window.location.href = 'aukson.html';
-        }
 
 
-    }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/saveUserData", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                window.location.href = 'aukson.html';
+            }
+        };
+        var data = JSON.stringify({name: name, phoneNumber: phoneNumber});
+        xhr.send(data);
+
+
+    }}
 </script>
 
 

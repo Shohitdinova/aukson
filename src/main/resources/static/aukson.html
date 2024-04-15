@@ -99,19 +99,19 @@
 <div class="container">
     <div class="price-input">
         <label for="carPrice">Mashina narxi:</label>
-        <input type="text" id="carPrice" name="carPrice" placeholder="Mashinaning so'ngggi narxini kiriting !">
+        <input type="text" id="carPrice" name="carPrice" placeholder="Mashinaning so'ngggi narxini kiriting 🙂!">
         <button onclick="checkPrice()">Narxni kiritish</button>
     </div>
     <div class="car-info" id="carInfo">
         <img src="img.png" alt="Mashina" class="car-image">
         <table class="car-table">
             <tr>
-                <td><strong>Moshina:</strong></td>
+                <td><strong>Nomi:</strong></td>
                 <td id="carName">Malibu xl</td>
             </tr>
             <tr>
-                <td><strong>Mashina narxi:</strong></td>
-                <td >$24,000</td>
+                <td><strong>Narxi:</strong></td>
+                <td>$24,000</td>
             </tr>
             <tr>
                 <td><strong>Yurgani:</strong></td>
@@ -132,19 +132,16 @@
 
 
             <tr>
-
-            <tr>
                 <td><strong>Songgi narx:</strong></td>
                 <td id="highestPrice"></td>
             </tr>
-            </tr>
         </table>
     </div>
-    <div id="errorMessage">Iltimos, mashina narxini kiriting!</div>
+    <div id="errorMessage">Iltimos, mashina narxini kiritmasdan avval kiritish tugmasini bosmang 😡!</div>
 </div>
 
 <script>
-    var previousPrice = 24000; // Misolcha
+    var previousPrice = 24000;
 
     function checkPrice() {
         var carPrice = document.getElementById("carPrice").value;
@@ -169,7 +166,7 @@
             errorMessage.style.display = "block";
             setTimeout(function () {
                 errorMessage.style.display = "none";
-            }, 5000); }
+            }, 50000); }
 
 
         var carName = document.querySelector("#carName strong");
