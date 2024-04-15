@@ -14,7 +14,7 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/Create a new user")
+    @PostMapping("/Create")
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
 
