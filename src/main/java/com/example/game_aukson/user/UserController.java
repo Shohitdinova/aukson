@@ -14,9 +14,9 @@ import java.util.List;
 public class UserController {
     private final UserService userService;
 
-    @PostMapping("/Create")
-    public User createUser(@RequestBody User user) {
-        return userService.createUser(user);
+    @PostMapping("/login")
+    public User login(@RequestBody User user) {
+        return userService.login(user);
 
     }
 

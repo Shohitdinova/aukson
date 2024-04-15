@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -131,7 +132,7 @@
             console.log("Ism: " + name + ", Telefon Raqami: " + phoneNumber);
             window.location.href = 'aukson.html';
             var xhr = new XMLHttpRequest();
-            xhr.open("POST");
+            xhr.open("POST", "/login");
             xhr.setRequestHeader("Content-Type", "application/json");
             var data = JSON.stringify({name: name, phoneNumber: phoneNumber});
             xhr.send(data);
@@ -140,6 +141,7 @@
         }
     }
 </script>
+
 
 
 </body>
