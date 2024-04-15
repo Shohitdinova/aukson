@@ -2,13 +2,10 @@ package com.example.game_aukson.user;
 
 import com.example.game_aukson.user.entity.User;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
-
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
